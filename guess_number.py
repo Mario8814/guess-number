@@ -19,11 +19,12 @@ def main():
 
         attempts += 1
         guess = int(guess)
+        remaining = max_attempts - attempts
 
         if guess < target:
-            print("太小了,再大一点!")
+            print(f"太小了,再大一点!还剩 {remaining} 次机会。")
         elif guess > target:
-            print("太大了,再小一点!")
+            print(f"太大了,再小一点!还剩 {remaining} 次机会。")
         else:
             print(f"恭喜!你猜对了,就是 {target}!")
             print(f"你一共猜了 {attempts} 次。")
