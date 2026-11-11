@@ -1,8 +1,7 @@
 import random
 
 
-def main():
-    print("欢迎来玩猜数字游戏!")
+def play_game():
     print("我已经想好了一个 1 到 100 之间的数字,你有 8 次机会。")
 
     target = random.randint(1, 100)
@@ -32,6 +31,18 @@ def main():
 
     # 循环结束还没猜对,说明 8 次机会用完了
     print(f"很遗憾,机会用完了。正确答案是 {target}。")
+
+
+def main():
+    print("欢迎来玩猜数字游戏!")
+
+    while True:
+        play_game()
+
+        again = input("还要再来一局吗? (y/n): ").strip().lower()
+        if again not in ("y", "yes"):
+            print("感谢游玩,再见!")
+            break
 
 
 if __name__ == "__main__":
